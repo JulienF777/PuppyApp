@@ -15,13 +15,33 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
 }
 
 ?>
-<html>
-<form action="loginT.php" method="POST">
-    login
-    <input type="text" name="email" placeholder="email">
-    <input type="text" name="password" placeholder="password">
-    <input type="submit">
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap413/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="bootstrap-5.3.0-alpha-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+  
+<form action="loginT.php" method="POST" class="form-floating">
+
+    Login
+      <input type="text" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+
+      <input type="text" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+
+    <input type="submit">
 </form>
 
 <form action="create.php" method="POST">
