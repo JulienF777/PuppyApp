@@ -6,7 +6,7 @@ include("connect.php"); // On se connecte à la base
 session_start();
 
 // user update
-$userid = $_SESSION['user']['id'];
+$userid = $_POST["id"];
 $newemail = $_POST['email'];
 $newpassword = $_POST['password'];
 $newname = $_POST['name'];
@@ -45,23 +45,10 @@ $sql .= " WHERE id=?";
 $params[] = $userid;
 
 $q = $pdo->prepare($sql);
-$q->execute($params); // Pass the parameters as an array
+$q->execute($params); 
+// Pass the parameters as an array
 
 //Update the session to the new values
-session_unset();
-session_destroy();
-session_start();
-
-        $sql = "SELECT * FROM users WHERE email LIKE ?"; // La requête
-        $q = $pdo->prepare($sql);
-        $q->execute(array("%$newemail"));
-            while($line=$q->fetch()) {
-
-               var_dump($line);
-               $_SESSION['user'] = $line;
-        }
-        $_SESSION['login'] = TRUE;
-        $_SESSION['email'] = $newemail;
 
 header ('Location: index.php');
 ?>

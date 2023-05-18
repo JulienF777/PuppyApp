@@ -1,35 +1,42 @@
-
-
 <?php
 include("connect.php"); // On se connecte à la base
 session_start();
 
+//select the user to modify by id
+$iduser = $_POST["id"];
+
+$sql = "SELECT * FROM users WHERE id LIKE ?";
+$q = $pdo->prepare($sql);
+$q->execute(array("%$iduser"));
+
+$user = $q->fetch(PDO::FETCH_ASSOC); // Fetch all rows as an associative array
+
+var_dump($user); 
+
 echo "
-<h1>Account information</h1>
+<h1> User ".$user['name']." Data </h1>
 <table>
 <tr>
   <td>Name</td>
-  <td>".$_SESSION['user']['name']."</td>
+  <td>".$user['name']."</td>
   <td></td>
 </tr>
 <tr>
   <td>Email</td>
-  <td>".$_SESSION['user']['email']."</td>
+  <td>".$user['email']."</td>
 </tr>
 <tr>
   <td>Type</td>
-  <td>".$_SESSION['user']['user']."</td>
+  <td>".$user['user']."</td>
 </tr>
 <tr>
-  <td>Sex</td>
-  <td>".$_SESSION['user']['birthdate']."</td>
+  <td>Birthdate</td>
+  <td>".$user['birthdate']."</td>
 </tr>
 <tr>
   <td>Password</td>
-  <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
+  <td><input type='password' value='".$user['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
 </tr>
-
-
 </table>
 
 ";
@@ -38,8 +45,8 @@ echo "
 
 <h1>Edit the informations you want to change.</h1>
 
-<form action="editT.php" method="POST">
-   
+<form action="admineditT.php" method="POST">
+    <input type="hidden" name="id" value="<?php echo $iduser; ?>">
     <input type="text" name="name" placeholder="new name">
     <input type="text" name="email" placeholder="new email">
     <input type="date" name="birthdate" value="birthdate">  

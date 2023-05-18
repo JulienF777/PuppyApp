@@ -17,6 +17,7 @@ if( $_SESSION['login'] == TRUE){
 $usercreate = $_POST['email'];
 $passwordcreate = $_POST['password'];
 $namecreate = $_POST['name'];
+$birthdate = $_POST['birthdate'];
 
 function clean($string) {
     $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
@@ -25,9 +26,8 @@ function clean($string) {
  }
 clean($namecreate);
 
-$sexcreate = $_POST['sex'];
 
-$sql = "INSERT INTO users (name, email, sex, password) VALUES ('$namecreate','$usercreate','$sexcreate','$passwordcreate');"; // La requête
+$sql = "INSERT INTO users (name, email, birthdate, password) VALUES ('$namecreate','$usercreate','$birthdate','$passwordcreate');"; // La requête
 $q = $pdo->prepare($sql);
 $q->execute();
 

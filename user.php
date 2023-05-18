@@ -1,4 +1,53 @@
 <?php
+
+include("connect.php");
+
 // Get the user ID from the URL
-var_dump($_POST);
+$iduser = $_POST["id"];
+
+$sql = "SELECT * FROM users WHERE id LIKE ?";
+$q = $pdo->prepare($sql);
+$q->execute(array("%$iduser"));
+
+$user = $q->fetch(PDO::FETCH_ASSOC); // Fetch all rows as an associative array
+
+var_dump($user); 
+
+//show selected user data
+echo "
+<h1> User ".$user['name']." Data </h1>
+<table>
+<tr>
+  <td>Name</td>
+  <td>".$user['name']."</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Email</td>
+  <td>".$user['email']."</td>
+</tr>
+<tr>
+  <td>Type</td>
+  <td>".$user['user']."</td>
+</tr>
+<tr>
+  <td>Birthdate</td>
+  <td>".$user['birthdate']."</td>
+</tr>
+<tr>
+  <td>Password</td>
+  <td><input type='password' value='".$user['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
+</tr>
+</table>
+
+<form action='adminedit.php' method='POST'><input type='submit' value=".$user['id']." name='id'></form>
+<form action='delete.php' method='POST'><input type='submit' value='Delete my account'></form>
+
+
+
+
+";
+
+
+
 ?>

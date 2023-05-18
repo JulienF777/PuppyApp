@@ -30,8 +30,6 @@ echo "
   <td>Password</td>
   <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
 </tr>
-
-
 </table>
 
 ";

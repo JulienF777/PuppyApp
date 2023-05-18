@@ -22,8 +22,8 @@ if($_SESSION['login'] != false){
       <td>".$_SESSION['user']['user']."</td>
     </tr>
     <tr>
-      <td>Sex</td>
-      <td>".$_SESSION['user']['sex']."</td>
+      <td>Birthdate</td>
+      <td>".$_SESSION['user']['birthdate']."</td>
     </tr>
     <tr>
       <td>Password</td>
@@ -50,7 +50,7 @@ if($_SESSION['login'] != false){
         <tr>
           <th>Username</th>
           <th>Email</th>
-          <th>Sex</th>
+          <th>Birthdate</th>
           <th>Type</th>
           <th>Operations</th>
         </tr>";
@@ -66,9 +66,9 @@ if($_SESSION['login'] != false){
             echo "<tr>";
            echo "<td>".$line['name']."</td>";
            echo "<td>".$line['email']."</td>";
-           echo "<td>".$line['sex']."</td>";
+           echo "<td>".$line['birthdate']."</td>";
            echo "<td>".$line['user']."</td>";
-           echo "<td><form action='user.php' method='POST'><input type='submit' name='".$line['id']."'>";
+           echo "<td><form action='user.php' method='POST'><input type='submit' value=".$line['id']." name='id' placeholder='edit'>";
            echo "<br>";
 
         }
