@@ -21,6 +21,7 @@
 .card {
   box-shadow: 7px 7px 15px rgb(200, 200, 200);
   margin: 0 auto;
+  padding: 10px;
 }
 
 .card h2 {
