@@ -46,27 +46,26 @@ $user = $q->fetch(PDO::FETCH_ASSOC); // Fetch all rows as an associative array
 
 <?php
 //show selected user data
-echo "<h1 class='title'> User ".$user['name']." Data </h1>
+echo "<h1 class='title'>".$user['name']."'s user data </h1>
 <table class='table'>
 <tr>
-  <td>Name</td>
+  <th>Name</th>
   <td>".$user['name']."</td>
-  <td></td>
 </tr>
 <tr>
-  <td>Email</td>
+  <th>Email</th>
   <td>".$user['email']."</td>
 </tr>
 <tr>
-  <td>Type</td>
+  <th>Type</th>
   <td>".$user['user']."</td>
 </tr>
 <tr>
-  <td>Birthdate</td>
+  <th>Birthdate</th>
   <td>".$user['birthdate']."</td>
 </tr>
 <tr>
-  <td>Password</td>
+  <th>Password</th>
   <td><input type='password' value='".$user['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
 </tr>
 </table>

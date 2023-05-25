@@ -35,7 +35,7 @@ if(isset($_SESSION['erroredit'])){
   </nav>
   
   <?php
-echo "<h1 class='title'>Account information</h1>
+echo "<h1 class='title'>Account informations</h1>
 <table class='table'>
 <tr>
   <th>Name</th>
@@ -71,22 +71,22 @@ echo "<h1 class='title'>Account information</h1>
 
 <div class="form-floating mb-3">
     <input type="text" name="name" placeholder="new name" id="floatingInput" class="form-control">
-    <label for="floatingInput">Name</label>
+    <label for="floatingInput">New name</label>
 </div>
 
 <div class="form-floating mb-3">
     <input type="text" name="email" placeholder="new email" id="floatingInput" class="form-control">
-    <label for="floatingInput">Name</label>
+    <label for="floatingInput">New email address</label>
 </div>
 
     <input type="date" name="birthdate" value="birthdate" class="mb-3 birthdate"> 
     
 <div class="form-floating mb-3">
     <input type="text" name="password" placeholder="new password" id="floatingInput" class="form-control">
-    <label for="floatingPassword">Name</label>
+    <label for="floatingPassword">New password</label>
 </div>
 
-    <input type="submit" class='btn btn-outline-secondary btn-pink' id="floatingInput" class="form-control">
+    <input type="submit" value='Validate' class='btn btn-outline-secondary btn-pink' id="floatingInput" class="form-control">
 </form>
 
 
