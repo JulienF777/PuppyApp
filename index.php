@@ -5,6 +5,35 @@
 session_start();
 
 if($_SESSION['login'] != false){
+
+?>
+  <!DOCTYPE html>
+  <html lang="pt">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=ISO8859-1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Bootstrap core CSS -->
+      <link href="bootstrap413/css/bootstrap.min.css" rel="stylesheet">
+  
+      <!-- Custom styles for this template -->
+      <link href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/login.css" rel="stylesheet">
+  </head>
+  
+  <body>
+      
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-brand-login" href="#">
+        <img src="images/logo_puppyapp.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+      </a>
+    </div>
+  </nav>
+  
+  <?php
     echo "Hello ".$_SESSION['user']['name'];
 
     echo "<table>
@@ -30,12 +59,10 @@ if($_SESSION['login'] != false){
       <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
     </tr>
 
-
   </table>
 
   <form action='edit.php' method='POST'><input type='submit' value='Edit my account'></form>
   <form action='delete.php' method='POST'><input type='submit' value='Delete my account'></form>
-
   ";
 
     echo "<form action='logout.php' method='POST'><input type='submit' value='Log out'></form>";
