@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 25 mai 2023 à 12:18
+-- Généré le : jeu. 25 mai 2023 à 12:27
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -33,7 +33,7 @@ CREATE TABLE `users` (
   `number` int(4) NOT NULL,
   `user` varchar(20) DEFAULT 'user',
   `birthdate` date NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -44,7 +44,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `number`, `user`, `birthdate`, `email`, `password`) VALUES
 (29, '1', 0, 'user', '2023-05-10', '1@1.fr', '123'),
 (30, '1', 30, 'user', '2023-05-10', '1@1.fr', '123'),
-(31, '2', 31, 'user', '2023-05-02', '2@2.fr', '123');
+(31, '2', 31, 'user', '2023-05-02', '2@2.fr', '123'),
+(32, '3', 32, 'user', '2023-05-19', '3@3.fr', '123');
 
 --
 -- Index pour les tables déchargées
@@ -64,7 +65,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

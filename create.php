@@ -35,10 +35,11 @@ $q->execute();
 
 //retrieve the user ID that was created, make it a 4 digit number and update it in the database.
 $userID = $pdo->lastInsertId();
-$userNumber = str_pad($userID, 4, '0', STR_PAD_LEFT);
+$userNumber = mt_rand(1111,9999);
 $sql = "UPDATE users SET number = '$userNumber' WHERE id = '$userID';";
 $q = $pdo->prepare($sql);
 $q->execute();
+
 
 //Make the user connected
 $_SESSION['login'] = TRUE;
