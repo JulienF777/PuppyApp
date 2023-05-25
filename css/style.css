@@ -1,5 +1,5 @@
 
-
+/*/////////////////// Login and register ///////////////////*/
 
 .navbar-brand-login {
     margin: 0 auto;
@@ -22,8 +22,8 @@
 }
 
 .btn:hover {
-    background-color: rgb(252, 220, 192);
-    border: 1px solid rgb(252, 220, 192);
+    background-color: rgb(255, 212, 174);
+    border: 1px solid rgb(255, 212, 174);
     font-weight: bold;
 }
 
@@ -32,3 +32,36 @@
     padding: 20px 10px;
     border-radius: 5px;
 }
+
+
+/*/////////////////// Profile ///////////////////*/
+
+.title {
+    text-align: center;
+    margin-top: 50px;
+    color: rgb(255, 212, 174);
+    font-style: italic;
+}
+
+.table {
+    width: 40%;
+    margin: 50px auto;
+    color: gray;
+}
+
+input {
+    color: gray;
+}
+
+.boutons {
+    width: 15rem;
+    margin: 0 auto;
+}
+
+.boutons input[type="submit"]{
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+}
+
+

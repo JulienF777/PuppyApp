@@ -5,36 +5,69 @@
 session_start();
 
 if($_SESSION['login'] != false){
-    echo "Hello ".$_SESSION['user']['name'];
 
-    echo "<table>
+?>
+  <!DOCTYPE html>
+  <html lang="pt">
+    <head>
+      <meta http-equiv="content-type" content="text/html; charset=ISO8859-1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- Bootstrap core CSS -->
+      <link href="bootstrap413/css/bootstrap.min.css" rel="stylesheet">
+  
+      <!-- Custom styles for this template -->
+      <link href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/login.css" rel="stylesheet">
+  </head>
+  
+  <body>
+      
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand navbar-brand-login" href="#">
+        <img src="images/logo_puppyapp.png" alt="Logo" width="100" class="d-inline-block align-text-top">
+      </a>
+    </div>
+  </nav>
+  
+  <?php
+    echo "<h1 class='title'>Hello ".$_SESSION['user']['name']." !</h1>";
+
+    echo "<table class='table'>
     <tr>
-      <td>Name</td>
+      <th>Name</td>
       <td>".$_SESSION['user']['name']."</td>
-      <td></td>
     </tr>
     <tr>
-      <td>Email</td>
+      <th>Email</td>
       <td>".$_SESSION['user']['email']."</td>
     </tr>
     <tr>
-      <td>Type</td>
+      <th>Type</td>
       <td>".$_SESSION['user']['user']."</td>
     </tr>
     <tr>
-      <td>Birthdate</td>
+      <th>Birthdate</td>
       <td>".$_SESSION['user']['birthdate']."</td>
     </tr>
-
+<<<<<<< HEAD
+=======
+    <tr>
+      <th>Password</td>
+      <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
+    </tr>
+>>>>>>> e84898104a95fb66e5d1a7c88c85aebc74ecf278
 
   </table>
 
-  <form action='edit.php' method='POST'><input type='submit' value='Edit my account'></form>
-  <form action='delete.php' method='POST'><input type='submit' value='Delete my account'></form>
-
+  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary'></form>
+  <form action='delete.php' method='POST' class='boutons'><input type='submit' value='Delete my account' class='btn btn-outline-secondary'></form>
   ";
 
-    echo "<form action='logout.php' method='POST'><input type='submit' value='Log out'></form>";
+    echo "<form action='logout.php' method='POST' class='boutons'><input type='submit' value='Log out' class='btn btn-outline-secondary'></form>";
 
 
     // Admin pannel
