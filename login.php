@@ -12,9 +12,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
   echo "";
 }
 
-if(isset($_SESSION['error'])){
-  echo $_SESSION['error'];
-}
 
 ?>
 <!DOCTYPE html>
@@ -43,6 +40,12 @@ if(isset($_SESSION['error'])){
   </div>
 </nav>
 
+<?php
+if(isset($_SESSION['error'])){
+  echo "<h3>".$_SESSION['error']."</h3>";
+}
+
+?>
 <div class="two-cards">
   
 <form action="loginT.php" method="POST">
