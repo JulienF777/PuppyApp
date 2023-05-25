@@ -34,7 +34,7 @@ if($_SESSION['login'] != false){
   </nav>
   
   <?php
-    echo "<h1 class='title'>Hello ".$_SESSION['user']['name']." !</h1>";
+    echo "<h1 class='hello'>Hello ".$_SESSION['user']['name']." !</h1>";
 
     echo "<table class='table'>
     <tr>
@@ -66,9 +66,9 @@ if($_SESSION['login'] != false){
     // Admin pannel
     include("connect.php");
     if($_SESSION['user']['user'] == 'admin'){
-        echo "admin manager panel<br>";
+        echo "<h1 class='title'>Admin manager panel</h1>";
         echo "
-        <table>
+        <table class='table table-pink'>
         <tr>
           <th>Username</th>
           <th>Email</th>
@@ -93,7 +93,7 @@ if($_SESSION['login'] != false){
             echo "<td>".$line['user']."</td>";
             echo "<td><form action='user.php' method='POST'>";
             echo "<input type='hidden' name='id' value=".$line['id'].">";
-            echo "<input type='submit' value='Manage account' name='editbutton'>";
+            echo "<input type='submit' value='Manage account' name='editbutton' class='btn btn-outline-secondary btn-pink'>";
             echo "</form>";
             echo "<br>";
         }
