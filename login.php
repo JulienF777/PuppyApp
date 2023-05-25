@@ -72,49 +72,48 @@ if(isset($_SESSION['error'])){
 <div class="card" style="width: 18rem;">
     <h2>Signin</h2>
     <div class="form-floating mb-3">
-      <input type="text" name="name" required class="form-control" id="floatingInput" placeholder="name">
-      <label for="floatingPassword">Name</label>
+      <input type="text" name="name" required class="form-control" id="floatingName" placeholder="name">
+      <label for="floatingName">Name</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="text" name="email" required class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="text" name="email" required class="form-control" id="floatingEmail" placeholder="name@example.com">
+      <label for="floatingEmail">Email address</label>
     </div>
 
     <input type="date" name="birthdate" value="birthdate" class="mb-3 birthdate"/>
     
     <div class="form-floating mb-3">
-      <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="p1" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
 
     <div class="form-floating mb-3">
-      <input type="password" name="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
+      <input type="password" name="confirm_password" class="form-control" id="p2" placeholder="Confirm Password">
       <label for="confirm_password">Confirm password</label>
     </div>
 
     <input type="submit" class="btn btn-outline-secondary btn-pink">
   </div>
-
 </form>
 
-</div>
-
 <script>
-  var password = document.getElementById("password")
-  , confirm_password = document.getElementById("confirm_password");
+  var password = document.getElementById("p1");
+  var confirm_password = document.getElementById("p2");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
+  function validatePassword() {
+    if (password.value !== confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match");
+    } else {
+      confirm_password.setCustomValidity('');
+    }
   }
-}
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
 </script>
+
+
 
 </body>
 

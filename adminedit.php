@@ -12,7 +12,7 @@ $q->execute(array("%$iduser"));
 $user = $q->fetch(PDO::FETCH_ASSOC); // Fetch all rows as an associative array
 
 echo "
-<h1> User ".$user['name']." Data </h1>
+<h1> User ".$user['name']."</h1>
 <table>
 <tr>
   <td>Name</td>
