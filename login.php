@@ -55,7 +55,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
       <label for="floatingPassword">Password</label>
     </div>
 
-    <input type="submit" class="btn btn-outline-secondary">
+    <input type="submit" class="btn btn-outline-secondary btn-pink">
 </div>
 
 </form>
@@ -86,7 +86,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
       <label for="confirm_password">Confirm password</label>
     </div>
 
-    <input type="submit" class="btn btn-outline-secondary">
+    <input type="submit" class="btn btn-outline-secondary btn-pink">
   </div>
 
 </form>

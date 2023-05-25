@@ -21,7 +21,7 @@
     color: gray;
 }
 
-.btn:hover {
+.btn-pink:hover {
     background-color: rgb(255, 212, 174);
     border: 1px solid rgb(255, 212, 174);
     font-weight: bold;
