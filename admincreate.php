@@ -63,7 +63,7 @@ if(isset($_SESSION['error'])){
       <label for="confirm_password">Confirm password</label>
     </div>
 
-    <input type="submit" class="btn btn-outline-secondary btn-pink">
+    <input type="submit" value='Validate' class="btn btn-outline-secondary btn-pink">
   </div>
 
 </form>
