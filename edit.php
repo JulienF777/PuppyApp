@@ -25,7 +25,7 @@ echo "
   <td>".$_SESSION['user']['user']."</td>
 </tr>
 <tr>
-  <td>Sex</td>
+  <td>Birthdate</td>
   <td>".$_SESSION['user']['birthdate']."</td>
 </tr>
 <tr>
