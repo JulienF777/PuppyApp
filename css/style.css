@@ -72,6 +72,16 @@
 }
 
 
+.create-account {
+    color: rgb(255, 212, 174);
+    font-weight: bold;
+}
+
+.create-account:hover {
+    text-decoration: none;
+}
+
+
 /*/////////////////// Admin panel ///////////////////*/
 
 .title {
@@ -100,3 +110,5 @@
 .back a {
     margin: 0 auto;
 }
+
+

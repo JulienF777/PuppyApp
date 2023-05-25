@@ -35,13 +35,11 @@ if(isset($_SESSION['error'])){
     </a>
   </div>
 </nav>
-
-<div class="two-cards">
   
 
-<form action="admincreateT.php" method="POST">
+<form action="admincreateT.php" method="POST" style="width:30%; margin:50px auto;">
 
-<div class="card" style="width: 18rem;">
+<div class="card">
     <h2>Create an account</h2>
     <div class="form-floating mb-3">
       <input type="text" name="name" required class="form-control" id="floatingInput" placeholder="name">
@@ -69,8 +67,6 @@ if(isset($_SESSION['error'])){
   </div>
 
 </form>
-
-</div>
 
 <script>
   var password = document.getElementById("password")
