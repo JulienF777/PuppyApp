@@ -77,7 +77,7 @@ echo "<h1 class='hello'> User ".$user['name']." </h1>
     <input type="text" name="email" placeholder="new email" class="mb-3 birthdate">
     <input type="date" name="birthdate" value="birthdate" class="mb-3 birthdate">  
     <input type="text" name="password" placeholder="new password" class="mb-3 birthdate">
-    <input type="submit" class='btn btn-outline-secondary btn-pink'>
+    <input type="submit" class='btn btn-outline-secondary btn-pink' value="Validate">
 </form>
 
 <div class="back">

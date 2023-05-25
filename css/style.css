@@ -11,6 +11,12 @@
     width: 40%;
     margin: 50px auto;
 }
+#createaccount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .card {
   box-shadow: 7px 7px 15px rgb(200, 200, 200);

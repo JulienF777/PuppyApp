@@ -84,3 +84,15 @@ echo "<h1 class='title'> User ".$user['name']." Data </h1>
 <div class="back">
   <a href="index.php" class="btn btn-secondary btn-lg">Go Back</a>
 </div>
+
+
+<script>
+    function myFunction() {
+    var x = document.getElementById("myInput");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+    }
+</script>
