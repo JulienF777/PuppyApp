@@ -55,35 +55,38 @@ if($_SESSION['login'] != false){
           <th>Operations</th>
         </tr>";
 
-        $sql = "SELECT * FROM users"; // La requête
+        $sql = "SELECT * FROM users"; // The query
         $q = $pdo->prepare($sql);
         $q->execute();
-        while($line=$q->fetch()) {
-
-           
-            $_SESSION['users'] = $line;
+        
+        $users = []; // Create an empty array to store all users
+        
+        while($line = $q->fetch()) {
+            $users[] = $line; // Add each user to the array
             
             echo "<tr>";
-           echo "<td>".$line['name']."</td>";
-           echo "<td>".$line['email']."</td>";
-           echo "<td>".$line['birthdate']."</td>";
-           echo "<td>".$line['user']."</td>";
-           echo "<td><form action='user.php' method='POST'><input type='submit' value=".$line['id']." name='id' placeholder='edit'>";
-           echo "<br>";
-
+            echo "<td>".$line['name']."</td>";
+            echo "<td>".$line['email']."</td>";
+            echo "<td>".$line['birthdate']."</td>";
+            echo "<td>".$line['user']."</td>";
+            echo "<td><form action='user.php' method='POST'>";
+            echo "<input type='hidden' name='id' value=".$line['id'].">";
+            echo "<input type='submit' value='Manage account' name='editbutton'>";
+            echo "</form>";
+            echo "<br>";
         }
+        
+        $_SESSION['users'] = $users; // Store all users in the session
         
 
     } else {
-        echo "not admin";
+        
     }
 
 } else {
     echo "you need to log in";
     header ('Location: login.php');
 }
-
-
 
 ?>
 
