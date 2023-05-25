@@ -8,6 +8,7 @@ if($_SESSION['user']['user'] != 'admin'){
     header ('Location: index.php');
   }
 
+  
 $userid = $_POST['id'];
 
 
@@ -59,7 +60,7 @@ echo "<input type='hidden' name='id' value=".$userid.">"
 </form>
 
 <div class="back">
-  <a href="user.php" class="btn btn-secondary btn-lg">Go Back</a>
+  <a href="index.php" class="btn btn-secondary btn-lg">Go Back</a>
 </div>
 
 <style>
