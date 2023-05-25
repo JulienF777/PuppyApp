@@ -50,7 +50,7 @@ if(isset($_SESSION['error'])){
   
 <form action="loginT.php" method="POST">
 
-<div class="card" style="width: 18rem;">
+<div class="card">
     <h2>Login</h2>
     <div class="form-floating mb-3">
       <input type="text" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -69,7 +69,7 @@ if(isset($_SESSION['error'])){
 
 <form action="create.php" method="POST">
 
-<div class="card" style="width: 18rem;">
+<div class="card">
     <h2>Signin</h2>
     <div class="form-floating mb-3">
       <input type="text" name="name" required class="form-control" id="floatingName" placeholder="name">

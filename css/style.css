@@ -6,9 +6,7 @@
 }
 
 .two-cards {
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
+    width: 25%;
     margin: 50px auto;
 }
 #createaccount{
@@ -20,7 +18,7 @@
 
 .card {
   box-shadow: 7px 7px 15px rgb(200, 200, 200);
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 10px;
 }
 
