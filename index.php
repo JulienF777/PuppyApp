@@ -53,13 +53,6 @@ if($_SESSION['login'] != false){
       <th>Birthdate</td>
       <td>".$_SESSION['user']['birthdate']."</td>
     </tr>
-<<<<<<< HEAD
-=======
-    <tr>
-      <th>Password</td>
-      <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
-    </tr>
->>>>>>> e84898104a95fb66e5d1a7c88c85aebc74ecf278
 
   </table>
 
