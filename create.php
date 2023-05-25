@@ -72,20 +72,21 @@ while($q->fetchAll() != NULL){
 
 
 //Make the user connected
-$_SESSION['login'] = TRUE;
-$_SESSION['email'] = $usercreate;
-$email = $_SESSION['email'];
+// $_SESSION['login'] = TRUE;
+// $_SESSION['email'] = $usercreate;
+// $email = $_SESSION['email'];
 
-        $sql = "SELECT * FROM users WHERE email LIKE ?"; 
-        $q = $pdo->prepare($sql);
-        $q->execute(array("%$email"));
-            while($line=$q->fetch()) {
+//         $sql = "SELECT * FROM users WHERE email LIKE ?"; 
+//         $q = $pdo->prepare($sql);
+//         $q->execute(array("%$email"));
+//             while($line=$q->fetch()) {
 
-               var_dump($line);
-               $_SESSION['user'] = $line;
-            }
+//                var_dump($line);
+//                $_SESSION['user'] = $line;
+//             }
 //go back to the main page
-header ('Location: index.php');
+$_SESSION['error'] = 'Your account is not validated yet';
+             header ('Location: login.php');
 }
 ?>
   

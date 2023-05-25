@@ -32,6 +32,22 @@ if(filter_var($line['email'], FILTER_VALIDATE_EMAIL)==true){
 
     if($line['email'] == $_POST['email'] AND $line['password'] == sha1($_POST['password'])){
         
+        //check that user is enabled
+        $email=$_POST['email'];
+        $sql = "SELECT enabled FROM users WHERE email LIKE ?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array("%$email"));
+
+        $result = $q->fetch();
+        var_dump($result['enabled']);
+
+        if($result['enabled']=='no'){
+            echo "enabled = no";
+            $_SESSION['error'] = 'Your account is not validated yet';
+             header ('Location: login.php');
+             exit;
+        } else {
+
         $_SESSION['login'] = TRUE;
         $_SESSION['email'] = $line['email'];
         $email = $_SESSION['email'];
@@ -41,19 +57,20 @@ if(filter_var($line['email'], FILTER_VALIDATE_EMAIL)==true){
         $q->execute(array("%$email"));
             while($line=$q->fetch()) {
 
-               var_dump($line);
+            //    var_dump($line);
                $_SESSION['user'] = $line;
         }
 
         header ('Location: index.php');
         
-    } else {
-        
-        header ('Location: index.php');
+    }} else {
+        $_SESSION['error'] = 'Invalid email or password';
+        header ('Location: login.php');
     }
     
     } else {
-    header ('Location: index.php');
+    $_SESSION['error'] = 'Invalid email format';
+    header ('Location: login.php');
 }
 }
 

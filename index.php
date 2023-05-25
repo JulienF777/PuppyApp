@@ -75,6 +75,7 @@ if($_SESSION['login'] != false){
           <th>Email</th>
           <th>Birthdate</th>
           <th>Type</th>
+          <th>Enabled</th>
           <th>Operations</th>
         </tr>";
 
@@ -92,6 +93,7 @@ if($_SESSION['login'] != false){
             echo "<td>".$line['email']."</td>";
             echo "<td>".$line['birthdate']."</td>";
             echo "<td>".$line['user']."</td>";
+            echo "<td>".$line['enabled']."</td>";
             echo "<td><form action='user.php' method='POST'>";
             echo "<input type='hidden' name='id' value=".$line['id'].">";
             echo "<input type='submit' value='Manage account' name='editbutton' class='btn btn-outline-secondary btn-pink'>";

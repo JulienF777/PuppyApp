@@ -65,6 +65,10 @@ echo "<h1 class='title'>".$user['name']."'s user data </h1>
   <td>".$user['birthdate']."</td>
 </tr>
 <tr>
+  <th>Enabled</th>
+  <td>".$user['enabled']."</td>
+</tr>
+<tr>
   <th>Password</th>
   <td><input type='password' value='".$user['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
 </tr>

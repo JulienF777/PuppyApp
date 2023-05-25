@@ -60,6 +60,10 @@ echo "<h1 class='hello'> User ".$user['name']." </h1>
   <td>".$user['birthdate']."</td>
 </tr>
 <tr>
+  <th>Enabled</th>
+  <td>".$user['enabled']."</td>
+</tr>
+<tr>
   <th>Password</th>
   <td><input type='password' value='".$user['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
 </tr>
@@ -77,6 +81,23 @@ echo "<h1 class='hello'> User ".$user['name']." </h1>
     <input type="text" name="email" placeholder="new email" class="mb-3 birthdate">
     <input type="date" name="birthdate" value="birthdate" class="mb-3 birthdate">  
     <input type="text" name="password" placeholder="new password" class="mb-3 birthdate">
+    <input type="submit" class='btn btn-outline-secondary btn-pink' value="Validate">
+</form>
+
+<form action="validate.php" method="POST" class="card card-edit">
+  
+    <input type="hidden" name="id" value="<?php echo $iduser; ?>" class="mb-3 birthdate">
+    <div>
+    enable account ?
+    </br>
+    <input type="radio" name="enabled" value="no" class="mb-3 birthdate">
+    <label>no</label>
+    </div>
+
+    <div>
+    <input type="radio" name="enabled" value="yes" class="mb-3 birthdate">
+    <label>yes</label>
+    </div>
     <input type="submit" class='btn btn-outline-secondary btn-pink' value="Validate">
 </form>
 
