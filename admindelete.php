@@ -59,7 +59,7 @@ echo "<input type='hidden' name='id' value=".$userid.">"
 </form>
 
 <div class="back">
-  <a href="index.php" class="btn btn-secondary btn-lg">Go Back</a>
+  <a href="user.php" class="btn btn-secondary btn-lg">Go Back</a>
 </div>
 
 <style>
