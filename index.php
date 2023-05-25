@@ -67,6 +67,7 @@ if($_SESSION['login'] != false){
     include("connect.php");
     if($_SESSION['user']['user'] == 'admin'){
         echo "<h1 class='title'>Admin manager panel</h1>";
+        echo "<a href='admincreate.php'>Create an account</a>";
         echo "
         <table class='table table-pink'>
         <tr>

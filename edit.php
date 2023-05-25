@@ -50,7 +50,7 @@ echo "<h1 class='title'>Account information</h1>
   <td>".$_SESSION['user']['user']."</td>
 </tr>
 <tr>
-  <th>Sex</th>
+  <th>Birthdate</th>
   <td>".$_SESSION['user']['birthdate']."</td>
 </tr>
 <tr>
