@@ -27,7 +27,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
 
     <!-- Custom styles for this template -->
     <link href="bootstrap-5.3.0-alpha-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
 </head>
 
