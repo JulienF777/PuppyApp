@@ -10,16 +10,17 @@ if( $_SESSION['login'] == TRUE){
     session_destroy();
 }
 
-// user creation inputs.
-$usercreate = $_POST['email'];
+// user creation inputs. check that email is valid
+if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    $usercreate = $_POST['email'];
+  } else {
+    $_SESSION['error'] = 'Email is not valid';
+    header ('Location: index.php');
+  }
+
 $passwordcreate = $_POST['password'];
+
 $namecreate = $_POST['name'];
-$birthdate = $_POST['birthdate'];
-
-// we need to verify the sent inputs to protect against SQL injections !
-// filter var.
-
-
 //function to clean special characters from the name of the user
 function clean($string) {
     $string = str_replace(' ', '-', $string);
@@ -28,17 +29,46 @@ function clean($string) {
  }
 clean($namecreate);
 
-// Create the new users in the database
-$sql = "INSERT INTO users (name, email, birthdate, password) VALUES ('$namecreate','$usercreate','$birthdate','$passwordcreate');"; // La requête
-$q = $pdo->prepare($sql);
-$q->execute();
+$birthdate = $_POST['birthdate'];
 
-//retrieve the user ID that was created, make it a 4 digit number and update it in the database.
+// we need to verify the sent inputs to protect against SQL injections !
+// filter var.
+
+
+
+
+// check if the email is unique
+$sql = "SELECT id FROM users WHERE email = ?;"; // La requête
+$q = $pdo->prepare($sql);
+$q->execute([$usercreate]);
+if($q->fetchAll() != NULL){
+    // email not unique
+    $_SESSION['error'] = 'Email already exist';
+    header ('Location: index.php');
+} else {
+
+// Create the new users in the database
+$sql = "INSERT INTO users (name, email, birthdate, password) VALUES (?,?,?,?);"; // La requête
+$q = $pdo->prepare($sql);
+$q->execute([$namecreate,$usercreate,$birthdate,sha1($passwordcreate)]);
+
+//make a 4 digit number and update the number in the database.
 $userID = $pdo->lastInsertId();
 $userNumber = mt_rand(1111,9999);
-$sql = "UPDATE users SET number = '$userNumber' WHERE id = '$userID';";
+//check that the number created does not exist in the database
+$sql = "SELECT id FROM users WHERE number = '$userNumber';";
 $q = $pdo->prepare($sql);
 $q->execute();
+while($q->fetchAll() != NULL){
+    $userNumber = mt_rand(1111,9999);
+    $sql = "SELECT id FROM users WHERE number = '$userNumber';";
+    $q = $pdo->prepare($sql);
+    $q->execute();
+}
+// update number to unique number.
+    $sql = "UPDATE users SET number = '$userNumber' WHERE id = '$userID';";
+    $q = $pdo->prepare($sql);
+    $q->execute();
 
 
 //Make the user connected
@@ -56,4 +86,6 @@ $email = $_SESSION['email'];
             }
 //go back to the main page
 header ('Location: index.php');
+}
 ?>
+  

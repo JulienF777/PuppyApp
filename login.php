@@ -12,6 +12,10 @@ if(isset($_SESSION['login']) && $_SESSION['login'] != false){
   echo "";
 }
 
+if(isset($_SESSION['error'])){
+  echo $_SESSION['error'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt">

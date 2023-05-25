@@ -30,9 +30,8 @@ while($line=$q->fetch()) {
 
 if(filter_var($line['email'], FILTER_VALIDATE_EMAIL)==true){
 
-    if($line['email'] == $_POST['email'] AND $line['password'] == $_POST['password']){
+    if($line['email'] == $_POST['email'] AND $line['password'] == sha1($_POST['password'])){
         
-    
         $_SESSION['login'] = TRUE;
         $_SESSION['email'] = $line['email'];
         $email = $_SESSION['email'];
