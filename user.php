@@ -2,7 +2,12 @@
 
 include("connect.php");
 
+session_start();
 // Get the user ID from the URL
+if($_SESSION['user']['user'] != 'admin'){
+  header ('Location: index.php');
+}
+
 $iduser = $_POST["id"];
 
 $sql = "SELECT * FROM users WHERE id LIKE ?";

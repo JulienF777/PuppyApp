@@ -11,8 +11,6 @@ $q->execute(array("%$iduser"));
 
 $user = $q->fetch(PDO::FETCH_ASSOC); // Fetch all rows as an associative array
 
-var_dump($user); 
-
 echo "
 <h1> User ".$user['name']." Data </h1>
 <table>

@@ -46,8 +46,8 @@ if($_SESSION['login'] != false){
       <td>".$_SESSION['user']['email']."</td>
     </tr>
     <tr>
-      <th>Type</td>
-      <td>".$_SESSION['user']['user']."</td>
+      <th>Number</td>
+      <td>".$_SESSION['user']['number']."</td>
     </tr>
     <tr>
       <th>Birthdate</td>
@@ -56,10 +56,10 @@ if($_SESSION['login'] != false){
 
   </table>
 
-  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary btn-pink'></form>
-  <form action='delete.php' method='POST' class='boutons'><input type='submit' value='Delete my account' class='btn btn-outline-secondary btn-pink'></form>
+  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary'></form>
+  
   ";
-
+  // <form action='delete.php' method='POST' class='boutons'><input type='submit' value='Delete my account' class='btn btn-outline-secondary'></form>
     echo "<form action='logout.php' method='POST' class='boutons'><input type='submit' value='Log out' class='btn btn-outline-secondary'></form>";
 
 
