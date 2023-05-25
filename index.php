@@ -56,7 +56,7 @@ if($_SESSION['login'] != false){
 
   </table>
 
-  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary'></form>
+  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary btn-pink'></form>
   
   ";
   // <form action='delete.php' method='POST' class='boutons'><input type='submit' value='Delete my account' class='btn btn-outline-secondary'></form>
