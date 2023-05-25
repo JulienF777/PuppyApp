@@ -4,6 +4,10 @@
 include("connect.php"); // On se connecte à la base
 session_start();
 
+if($_SESSION['user']['user'] != 'admin'){
+    header ('Location: index.php');
+  }
+
 $userid = $_POST['id'];
 
 echo "
