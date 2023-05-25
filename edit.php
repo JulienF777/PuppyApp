@@ -67,16 +67,32 @@ echo "<h1 class='title'>Account information</h1>
 
 <h1 class='title'>Edit the informations you want to change</h1>
 
-<form action="editT.php" method="POST" class='card'>
-   
-    <input type="text" name="name" placeholder="new name">
-    <input type="text" name="email" placeholder="new email">
-    <input type="date" name="birthdate" value="birthdate">  
-    <input type="text" name="password" placeholder="new password">
-    <input type="submit" class='btn btn-outline-secondary btn-pink'>
+<form action="editT.php" method="POST" class="card card-edit">
+
+<div class="form-floating mb-3">
+    <input type="text" name="name" placeholder="new name" id="floatingInput" class="form-control">
+    <label for="floatingInput">Name</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input type="text" name="email" placeholder="new email" id="floatingInput" class="form-control">
+    <label for="floatingInput">Name</label>
+</div>
+
+    <input type="date" name="birthdate" value="birthdate" class="mb-3 birthdate"> 
+    
+<div class="form-floating mb-3">
+    <input type="text" name="password" placeholder="new password" id="floatingInput" class="form-control">
+    <label for="floatingPassword">Name</label>
+</div>
+
+    <input type="submit" class='btn btn-outline-secondary btn-pink' id="floatingInput" class="form-control">
 </form>
 
-<a href="index.php">Go Back</a>
+
+<div class="back">
+  <a href="index.php" class="btn btn-secondary btn-lg">Go Back</a>
+</div>
 
 <script>
     function myFunction() {
