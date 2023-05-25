@@ -34,38 +34,37 @@ if($_SESSION['login'] != false){
   </nav>
   
   <?php
-    echo "Hello ".$_SESSION['user']['name'];
+    echo "<h1 class='title'>Hello ".$_SESSION['user']['name']." !</h1>";
 
-    echo "<table>
+    echo "<table class='table'>
     <tr>
-      <td>Name</td>
+      <th>Name</td>
       <td>".$_SESSION['user']['name']."</td>
-      <td></td>
     </tr>
     <tr>
-      <td>Email</td>
+      <th>Email</td>
       <td>".$_SESSION['user']['email']."</td>
     </tr>
     <tr>
-      <td>Type</td>
+      <th>Type</td>
       <td>".$_SESSION['user']['user']."</td>
     </tr>
     <tr>
-      <td>Birthdate</td>
+      <th>Birthdate</td>
       <td>".$_SESSION['user']['birthdate']."</td>
     </tr>
     <tr>
-      <td>Password</td>
+      <th>Password</td>
       <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
     </tr>
 
   </table>
 
-  <form action='edit.php' method='POST'><input type='submit' value='Edit my account'></form>
-  <form action='delete.php' method='POST'><input type='submit' value='Delete my account'></form>
+  <form action='edit.php' method='POST' class='boutons'><input type='submit' value='Edit my account' class='btn btn-outline-secondary'></form>
+  <form action='delete.php' method='POST' class='boutons'><input type='submit' value='Delete my account' class='btn btn-outline-secondary'></form>
   ";
 
-    echo "<form action='logout.php' method='POST'><input type='submit' value='Log out'></form>";
+    echo "<form action='logout.php' method='POST' class='boutons'><input type='submit' value='Log out' class='btn btn-outline-secondary'></form>";
 
 
     // Admin pannel
