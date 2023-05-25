@@ -4,6 +4,10 @@
 include("connect.php"); // On se connecte à la base
 session_start();
 
+if(isset($_SESSION['erroredit'])){
+  echo $_SESSION['erroredit'];
+}
+
 echo "
 <h1>Account information</h1>
 <table>

@@ -7,7 +7,20 @@ session_start();
 
 // user update
 $userid = $_SESSION['user']['id'];
-$newemail = $_POST['email'];
+
+$inputemail = $_POST['email'];
+//check if the email does not already exist
+        $sql = "SELECT * FROM users WHERE email LIKE ?"; // La requête
+        $q = $pdo->prepare($sql);
+        $q->execute(array("%$inputemail"));
+        if($q->fetchAll() != NULL) {
+            
+            $_SESSION['erroredit'] = 'Email already exist';
+             header ('Location: edit.php');
+        } else {
+            $newemail = $_POST['email'];
+        }
+
 $newpassword = $_POST['password'];
 $newname = $_POST['name'];
 $newbirthdate = $_POST['birthdate'];
@@ -57,11 +70,11 @@ session_start();
         $q->execute(array("%$newemail"));
             while($line=$q->fetch()) {
 
-               var_dump($line);
                $_SESSION['user'] = $line;
         }
         $_SESSION['login'] = TRUE;
         $_SESSION['email'] = $newemail;
 
 header ('Location: index.php');
+
 ?>

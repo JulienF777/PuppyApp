@@ -25,10 +25,6 @@ if($_SESSION['login'] != false){
       <td>Birthdate</td>
       <td>".$_SESSION['user']['birthdate']."</td>
     </tr>
-    <tr>
-      <td>Password</td>
-      <td><input type='password' value='".$_SESSION['user']['password']."'id='myInput'> <input type='checkbox' onclick='myFunction()'>Show Password </td>
-    </tr>
 
 
   </table>
