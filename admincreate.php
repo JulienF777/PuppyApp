@@ -68,6 +68,10 @@ if(isset($_SESSION['error'])){
 
 </form>
 
+<div class="back">
+  <a href="index.php" class="btn btn-secondary btn-lg">Go Back</a>
+</div>
+
 <script>
   var password = document.getElementById("password")
   , confirm_password = document.getElementById("confirm_password");
