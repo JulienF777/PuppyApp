@@ -40,10 +40,9 @@ echo "
 </tr>
 </table>
 
-<form action='adminedit.php' method='POST'><input type='submit' value=".$user['id']." name='id'></form>
-<form action='delete.php' method='POST'><input type='submit' value='Delete my account'></form>
+<form action='adminedit.php' method='POST'><input type='hidden' name='id' value=".$iduser."><input type='submit' value='edit' name='editbutton'></form>
 
-
+<form action='admindelete.php' method='POST'><input type='hidden' name='id' value=".$iduser."><input type='submit' value='delete' name='deletebutton'></form>
 
 
 ";
@@ -51,3 +50,4 @@ echo "
 
 
 ?>
+<a href="index.php">Go Back</a>
